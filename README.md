@@ -6,3 +6,12 @@
 ###### I expect that here in a simple and accessible language they will explain and show what automated testing is and how to do it. And I have practical experience and knowledge
 ###### I have high hopes for this course. Thanks!
 #### Best Reards,  Valeriia 😉
+
+
+# TASK 2: *Selectors*
+### Selectors for button "English":
+//*[@id="__next"]/form/div/div[2]/div/div
+
+//*[text()="English"]
+
+//child::div/div[2]/div/div 
