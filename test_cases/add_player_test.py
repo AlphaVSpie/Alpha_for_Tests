@@ -11,7 +11,7 @@ from pages.dashboard import Dashboard
 from utils.settings import DRIVER_PATH, IMPLICITLY_WAIT
 
 
-class TestLoginPage(unittest.TestCase):
+class TestAddPlayer(unittest.TestCase):
 
     @classmethod
     def setUp(self):
@@ -28,6 +28,9 @@ class TestLoginPage(unittest.TestCase):
         user_login.type_in_email("user01@getnada.com")
         user_login.type_in_password("Test-1234")
         user_login.click_on_the_sign_in_button()
+        dashboard_page = Dashboard(self.driver)
+        dashboard_page.title_of_page()
+        dashboard_page.click_add_a_player()
         add_a_player_page = AddPlayer(self.driver)
         add_a_player_page.title_of_page()
         time.sleep(5)
