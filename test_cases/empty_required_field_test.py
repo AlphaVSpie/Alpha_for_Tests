@@ -12,7 +12,7 @@ from selenium.webdriver.common.by import By
 from utils.settings import DRIVER_PATH, IMPLICITLY_WAIT
 
 
-class TestAddPlayer(unittest.TestCase):
+class TestEmptyField(unittest.TestCase):
 
     @classmethod
     def setUp(self):
@@ -23,7 +23,7 @@ class TestAddPlayer(unittest.TestCase):
         self.driver.fullscreen_window()
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
 
-    def test_add_player(self):
+    def test_empty_req_field(self):
         user_login = LoginPage(self.driver)
         user_login.title_of_page()
         user_login.type_in_email("user01@getnada.com")
@@ -34,9 +34,22 @@ class TestAddPlayer(unittest.TestCase):
         dashboard_page.click_add_a_player()
         add_a_player_page = AddPlayer(self.driver)
         add_a_player_page.title_of_page()
+        add_a_player_page.type_in_name('Don')
+        add_a_player_page.click_surname()
+        add_a_player_page.type_in_age('26.07.1996')
+        add_a_player_page.type_in_main_position('Forward')
+        add_a_player_page.click_district()
+        add_a_player_page.click_opole()
+        add_a_player_page.click_add_language()
+        add_a_player_page.type_in_languages("English")
+        add_a_player_page.click_submit()
+        surname = self.driver.find_element(By.XPATH,'//*[@id="__next"]/div[1]/main/div[2]/form/div[2]/div/div[3]/div/p')
+        assert surname.text == 'Required'
+        print("'Required' title is fine")
+
         time.sleep(5)
 
-        print("YOU ARE ROCK")
+        print("SUCCESS")
 
     @classmethod
     def tearDown(self):

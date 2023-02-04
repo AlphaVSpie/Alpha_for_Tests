@@ -12,7 +12,7 @@ from selenium.webdriver.common.by import By
 from utils.settings import DRIVER_PATH, IMPLICITLY_WAIT
 
 
-class TestAddPlayer(unittest.TestCase):
+class TestNewPlayerCreating(unittest.TestCase):
 
     @classmethod
     def setUp(self):
@@ -23,7 +23,7 @@ class TestAddPlayer(unittest.TestCase):
         self.driver.fullscreen_window()
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
 
-    def test_add_player(self):
+    def test_new_player_creating(self):
         user_login = LoginPage(self.driver)
         user_login.title_of_page()
         user_login.type_in_email("user01@getnada.com")
@@ -34,9 +34,27 @@ class TestAddPlayer(unittest.TestCase):
         dashboard_page.click_add_a_player()
         add_a_player_page = AddPlayer(self.driver)
         add_a_player_page.title_of_page()
+        add_a_player_page.type_in_e_mail('user01@getnada.com')
+        add_a_player_page.type_in_name('Dud')
+        add_a_player_page.type_in_surname('Podolski')
+        add_a_player_page.type_in_phone('3857572294')
+        add_a_player_page.type_in_weight('86')
+        add_a_player_page.type_in_height('189')
+        add_a_player_page.type_in_age('03.06.1995')
+        add_a_player_page.click_leg()
+        add_a_player_page.click_right_leg()
+        add_a_player_page.type_in_club('Real Polska')
+        add_a_player_page.type_in_level('PRO')
+        add_a_player_page.type_in_main_position('Forward')
+        add_a_player_page.click_district()
+        add_a_player_page.click_opole()
+        add_a_player_page.click_add_language()
+        add_a_player_page.type_in_languages("English")
+        add_a_player_page.click_submit()
+        add_a_player_page.conf()
         time.sleep(5)
 
-        print("YOU ARE ROCK")
+        print("SUCCESS")
 
     @classmethod
     def tearDown(self):

@@ -12,7 +12,7 @@ from selenium.webdriver.common.by import By
 from utils.settings import DRIVER_PATH, IMPLICITLY_WAIT
 
 
-class TestAddPlayer(unittest.TestCase):
+class TestReturnMainPage(unittest.TestCase):
 
     @classmethod
     def setUp(self):
@@ -23,7 +23,7 @@ class TestAddPlayer(unittest.TestCase):
         self.driver.fullscreen_window()
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
 
-    def test_add_player(self):
+    def test_return_main_page(self):
         user_login = LoginPage(self.driver)
         user_login.title_of_page()
         user_login.type_in_email("user01@getnada.com")
@@ -34,9 +34,11 @@ class TestAddPlayer(unittest.TestCase):
         dashboard_page.click_add_a_player()
         add_a_player_page = AddPlayer(self.driver)
         add_a_player_page.title_of_page()
+        add_a_player_page.click_main_page()
+        dashboard_page.title_of_page()
         time.sleep(5)
 
-        print("YOU ARE ROCK")
+        print("RETURNED TO MAIN PAGE")
 
     @classmethod
     def tearDown(self):

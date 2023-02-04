@@ -35,6 +35,7 @@ class TestLoginPage(unittest.TestCase):
         dashboard_page.title_of_page()
         time.sleep(5)
 
+
     @classmethod
     def tearDown(self):
         self.driver.quit()

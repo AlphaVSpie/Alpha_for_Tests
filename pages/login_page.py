@@ -9,6 +9,9 @@ class LoginPage(BasePage):
     expected_title = "Scouts panel - sign in"
     title_of_box_xpath = "//*[@id='__next']/form/div/div[1]/h5"
     header_of_box = 'Scouts Panel'
+    validation_message_xpath = '//*[@id="__next"]/form/div/div[1]/div[3]/span'
+    sign_in_box_xpath ='//*[@id="__next"]/form/div/div[1]'
+    remind_password_button = '//*[@id="__next"]/form/div/div[1]/a'
 
     def type_in_email( self, email):
         self.field_send_keys(self.login_field_xpath, email)
@@ -21,4 +24,8 @@ class LoginPage(BasePage):
 
     def title_of_page(self):
         assert self.get_page_title(self.login_url) == self.expected_title
+
+    def click_on_remind_password(self):
+        self.click_on_the_element(self.remind_password_button)
+
 
