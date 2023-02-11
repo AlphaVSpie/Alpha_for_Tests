@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.2 on darwin)" generated="20230211 11:01:10.176" rpa="false" schemaversion="3">
+<suite id="s1" name="Test Login Rf" source="/Users/valeriiasukhanova/Documents/ITShit/GitHub/RobotFrameshit/_robotframework/test_login_rf.robot">
+<test id="s1-t1" name="Login to the system" line="15">
+<kw name="Open login page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230211 11:01:10.259" level="INFO">Opening browser 'Chrome' to base url 'https://scouts-test.futbolkolektyw.pl/en'.</msg>
+<status status="PASS" starttime="20230211 11:01:10.259" endtime="20230211 11:01:23.093"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Scouts Panel - sing in</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230211 11:01:23.333" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230211 11:01:23.333" level="FAIL">Title should have been 'Scouts Panel - sing in' but was 'Scouts panel - sign in'.</msg>
+<status status="FAIL" starttime="20230211 11:01:23.093" endtime="20230211 11:01:23.335"/>
+</kw>
+<status status="FAIL" starttime="20230211 11:01:10.259" endtime="20230211 11:01:23.335"/>
+</kw>
+<kw name="Type in email">
+<status status="NOT RUN" starttime="20230211 11:01:23.335" endtime="20230211 11:01:23.335"/>
+</kw>
+<kw name="Type in password">
+<status status="NOT RUN" starttime="20230211 11:01:23.335" endtime="20230211 11:01:23.335"/>
+</kw>
+<kw name="Click on the Submit button">
+<status status="NOT RUN" starttime="20230211 11:01:23.335" endtime="20230211 11:01:23.335"/>
+</kw>
+<kw name="Assert dashboard">
+<status status="NOT RUN" starttime="20230211 11:01:23.335" endtime="20230211 11:01:23.335"/>
+</kw>
+<status status="FAIL" starttime="20230211 11:01:10.258" endtime="20230211 11:01:23.335">Title should have been 'Scouts Panel - sing in' but was 'Scouts panel - sign in'.</status>
+</test>
+<doc>Suite description #automated tests for scout website</doc>
+<status status="FAIL" starttime="20230211 11:01:10.176" endtime="20230211 11:01:23.336"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Test Login Rf">Test Login Rf</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230211 11:01:10.174" level="ERROR">Error in file '/Users/valeriiasukhanova/Documents/ITShit/GitHub/RobotFrameshit/_robotframework/test_login_rf.robot' on line 4: Setting 'Documentation' is allowed only once. Only the first value is used.</msg>
+</errors>
+</robot>
