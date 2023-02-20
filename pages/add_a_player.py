@@ -4,7 +4,7 @@ from pages.base_page import BasePage
 
 class AddPlayer(BasePage):
     expected_title = "Add player"
-    add_a_player_url = 'https://scouts-test.futbolkolektyw.pl/en/players/add'
+    add_a_player_url = 'https://scouts.futbolkolektyw.pl/en/players/add'
     add_language_xpath = '//*[@id="__next"]/div[1]/main/div[2]/form/div[2]/div/div[15]/button/span[1]'
     languages_box_xpath = '//*[@id="__next"]/div[1]/main/div[2]/form/div[2]/div/div[''15]/div/div/div/input'
     languages_box_title = 'Languages'

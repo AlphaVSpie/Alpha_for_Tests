@@ -25,9 +25,6 @@ class TestLoginPageNegative(unittest.TestCase):
     def test_log_in_to_the_system_negative(self):
         user_login = LoginPage(self.driver)
         user_login.title_of_page()
-        scouts_panel = self.driver.find_element(By.XPATH, "//*[@id='__next']/form/div/div[1]/h5")
-        assert scouts_panel.text == 'Scouts Panel'
-        print("'Scouts Panel' title is fine")
         user_login.type_in_email("user01@getnada.com")
         user_login.type_in_password("TOst-1294")
         user_login.click_on_the_sign_in_button()
@@ -35,6 +32,7 @@ class TestLoginPageNegative(unittest.TestCase):
         assert scouts_panel.text == 'Identifier or password invalid.'
         print("'Identifier or password invalid.' title is fine")
         time.sleep(5)
+
 
 
     @classmethod

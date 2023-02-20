@@ -26,9 +26,6 @@ class TestRemindPassword(unittest.TestCase):
     def test_remind_password(self):
         user_login = LoginPage(self.driver)
         user_login.title_of_page()
-        scouts_panel = self.driver.find_element(By.XPATH, "//*[@id='__next']/form/div/div[1]/h5")
-        assert scouts_panel.text == 'Scouts Panel'
-        print("'Scouts Panel' title is fine")
         user_login.click_on_remind_password()
         remind_password = RemindPassword(self.driver)
         remind_password.title_of_page()

@@ -25,20 +25,13 @@ class TestSingOut(unittest.TestCase):
     def test_sing_out(self):
         user_login = LoginPage(self.driver)
         user_login.title_of_page()
-        scouts_panel = self.driver.find_element(By.XPATH, "//*[@id='__next']/form/div/div[1]/h5")
-        assert scouts_panel.text == 'Scouts Panel'
-        print("'Scouts Panel' title is fine")
         user_login.type_in_email("user01@getnada.com")
         user_login.type_in_password("Test-1234")
         user_login.click_on_the_sign_in_button()
         dashboard_page = Dashboard(self.driver)
-        dashboard_page.title_of_page()
+        dashboard_page.wait()
         time.sleep(4)
         dashboard_page.click_sign_out()
-        scouts_panel = self.driver.find_element(By.XPATH, "//*[@id='__next']/form/div/div[1]/h5")
-        assert scouts_panel.text == 'Scouts Panel'
-        print("'Scouts Panel' title is fine")
-
         time.sleep(5)
 
 

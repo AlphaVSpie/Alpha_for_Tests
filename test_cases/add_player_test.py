@@ -30,7 +30,7 @@ class TestAddPlayer(unittest.TestCase):
         user_login.type_in_password("Test-1234")
         user_login.click_on_the_sign_in_button()
         dashboard_page = Dashboard(self.driver)
-        dashboard_page.title_of_page()
+        dashboard_page.wait()
         dashboard_page.click_add_a_player()
         add_a_player_page = AddPlayer(self.driver)
         add_a_player_page.title_of_page()

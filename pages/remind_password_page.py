@@ -5,7 +5,7 @@ class RemindPassword(BasePage):
     email_field_xpath = '//*[@id="__next"]/div[1]/div/div[1]/div/div/input'
     send_button_xpath = '//*[@id="__next"]/div[1]/div/div[2]/button/span'
     message_sent_box_xpath = '//*[@id="__next"]/div[2]/div'
-    remind_password_url = 'https://scouts-test.futbolkolektyw.pl/en/remind'
+    remind_password_url = 'https://scouts.futbolkolektyw.pl/en/remind'
     expected_title = 'Remind password'
 
     def title_of_page( self ):
